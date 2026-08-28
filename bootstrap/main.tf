@@ -1,11 +1,8 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "hug-tf-week-two-state-${data.aws_caller_identity.current.account_id}"
-
-  lifecycle {
-    prevent_destroy = true
-  }
+  bucket        = "hug-tf-week-two-state-${data.aws_caller_identity.current.account_id}"
+  force_destroy = true
 
   tags = {
     Name    = "HUG Terraform State"
