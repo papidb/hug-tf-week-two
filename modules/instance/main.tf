@@ -1,0 +1,36 @@
+resource "aws_instance" "main_instance" {
+  ami           = "ami-03ceeebf93c41fdae"
+  instance_type = "t3.micro"
+
+  subnet_id = var.public_subnet_id
+  vpc_security_group_ids = [
+    var.security_group_id
+  ]
+
+  tags = {
+    Name = "main_instance"
+  }
+
+  user_data = <<-EOF
+  #!/bin/bash
+  set -euxo pipefail
+
+  apt-get update
+  DEBIAN_FRONTEND=noninteractive apt-get install -y nginx
+
+  cat > /var/www/html/index.html <<'HTML'
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Daniel Benjamin</title>
+    </head>
+    <body>
+      <h1>Daniel Benjamin</h1>
+      <h2>HUG Lagos/Ibadan Terraform Challenge</h2>
+    </body>
+  </html>
+  HTML
+
+  systemctl enable --now nginx
+  EOF
+}

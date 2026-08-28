@@ -1,0 +1,15 @@
+# Terraform working directory
+.terraform/
+
+# State and previous-state backup
+*.tfstate
+*.tfstate.*
+
+# Saved plans
+tfplan
+*.tfplan
+
+# Temporary state locks and crash logs
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
