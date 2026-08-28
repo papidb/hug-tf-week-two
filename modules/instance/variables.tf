@@ -7,3 +7,18 @@ variable "security_group_id" {
   type        = string
   description = "The id of the security group needed for instance"
 }
+
+variable "ami" {
+  type        = string
+  description = "ami of the instance"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "instance type of the instance"
+}
+
+variable "instance_name" {
+  type        = string
+  description = "instance name"
+}

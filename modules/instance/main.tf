@@ -1,6 +1,6 @@
 resource "aws_instance" "main_instance" {
-  ami           = "ami-03ceeebf93c41fdae"
-  instance_type = "t3.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
 
   subnet_id = var.public_subnet_id
   vpc_security_group_ids = [
@@ -8,7 +8,7 @@ resource "aws_instance" "main_instance" {
   ]
 
   tags = {
-    Name = "main_instance"
+    Name = var.instance_name
   }
 
   user_data = <<-EOF
