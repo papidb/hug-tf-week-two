@@ -45,3 +45,8 @@ variable "ssh_cidr" {
   description = "Public IPv4 CIDR permitted to connect over SSH"
   type        = string
 }
+
+# outputs
+output "instance_public_ip" {
+  value = module.instance.instance_public_ip
+}
