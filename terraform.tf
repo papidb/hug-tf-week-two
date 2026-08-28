@@ -1,9 +1,17 @@
 terraform {
+  required_version = ">= 1.10.0"
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.92"
     }
   }
-  required_version = ">=1.2"
+
+  backend "s3" {
+    key          = "hug-tf-week-two/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
+  }
 }
