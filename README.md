@@ -30,22 +30,6 @@ The application creates:
 
 ## Module structure
 
-```text
-.
-â”œâ”€â”€ bootstrap/
-â”‚   â”œâ”€â”€ main.tf
-â”‚   â”œâ”€â”€ outputs.tf
-â”‚   â””â”€â”€ terraform.tf
-â”œâ”€â”€ modules/
-â”‚   â”œâ”€â”€ instance/
-â”‚   â”œâ”€â”€ networking/
-â”‚   â”œâ”€â”€ security_group/
-â”‚   â””â”€â”€ vpc/
-â”œâ”€â”€ main.tf
-â”œâ”€â”€ terraform.tf
-â””â”€â”€ Makefile
-```
-
 The root configuration connects the modules through inputs and outputs:
 
 - The VPC module outputs the VPC ID.
