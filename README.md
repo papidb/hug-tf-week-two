@@ -183,6 +183,17 @@ The order is deliberate. Terraform first uses the remote state to destroy the ap
 
 The two destruction operations require confirmation. Review each destruction plan carefully before entering `yes`.
 
+## Screenshots
+
+### Webpage
+![Webpage](docs/screenshots/webpage.png)
+
+### EC2 instance running
+![EC2 instance running](docs/screenshots/ec2-instance.png)
+
+### S3 remote state
+![S3 remote state](docs/screenshots/s3-remote-state.png)
+
 ## Security decisions
 
 - HTTP is public because the challenge webpage must be reachable from the internet.
